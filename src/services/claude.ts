@@ -5,7 +5,7 @@ export async function generateSchedule(
   settings: ScheduleSettings,
   onStatus?: (status: string) => void,
 ): Promise<Schedule> {
-  onStatus?.('Sending recipes to Claude...');
+  onStatus?.('Reviewing Recipes...');
 
   const response = await fetch('/api/generate', {
     method: 'POST',

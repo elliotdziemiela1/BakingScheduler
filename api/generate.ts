@@ -115,7 +115,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Extract text from the response
     const textBlocks = response.content.filter((b) => b.type === 'text');
     if (textBlocks.length === 0) {
-      return res.status(500).json({ error: 'No text response received from Claude' });
+      return res.status(500).json({ error: 'No text response received' });
     }
 
     const text = textBlocks

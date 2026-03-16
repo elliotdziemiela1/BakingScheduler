@@ -97,7 +97,7 @@ export default function GeneratingView() {
       <h2 className={styles.heading}>Creating your schedule</h2>
       <p className={styles.status}>{status}</p>
       <p className={styles.hint}>
-        Claude is reading your recipes and coordinating the timing...
+        Reading your recipes and coordinating the timing...
       </p>
     </div>
   );
