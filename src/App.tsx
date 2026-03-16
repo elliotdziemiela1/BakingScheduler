@@ -1,7 +1,6 @@
 import { SchedulerProvider, useScheduler } from './context/SchedulerContext';
 import Layout from './components/Layout/Layout';
 import StepIndicator from './components/StepIndicator/StepIndicator';
-import ApiKeyBanner from './components/ApiKeyBanner/ApiKeyBanner';
 import RecipeInput from './components/RecipeInput/RecipeInput';
 import SettingsInput from './components/SettingsInput/SettingsInput';
 import GeneratingView from './components/GeneratingView/GeneratingView';
@@ -12,7 +11,6 @@ function WizardContent() {
 
   return (
     <>
-      <ApiKeyBanner />
       <StepIndicator currentStep={state.currentStep} />
       {state.currentStep === 'recipes' && <RecipeInput />}
       {state.currentStep === 'settings' && <SettingsInput />}
