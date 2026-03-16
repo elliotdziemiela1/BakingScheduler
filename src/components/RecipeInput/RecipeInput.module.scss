@@ -1,0 +1,96 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  @include card;
+}
+
+.heading {
+  font-size: $font-size-xl;
+  color: $color-brown;
+  margin-bottom: $space-2;
+}
+
+.description {
+  color: $color-brown-light;
+  margin-bottom: $space-6;
+}
+
+.inputRow {
+  display: flex;
+  gap: $space-3;
+  margin-bottom: $space-4;
+}
+
+.input {
+  @include input-base;
+  flex: 1;
+}
+
+.addButton {
+  @include button-primary;
+  flex-shrink: 0;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+  margin-bottom: $space-6;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: $space-3;
+  background: $color-cream;
+  padding: $space-3 $space-4;
+  border-radius: $border-radius;
+}
+
+.index {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: $color-amber;
+  color: $color-brown-dark;
+  font-size: $font-size-xs;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.url {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-brown;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.removeButton {
+  background: none;
+  border: none;
+  color: $color-brown-light;
+  font-size: $font-size-xl;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 $space-1;
+
+  &:hover {
+    color: $color-error;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nextButton {
+  @include button-primary;
+}

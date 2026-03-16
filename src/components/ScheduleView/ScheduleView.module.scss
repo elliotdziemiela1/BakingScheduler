@@ -1,0 +1,169 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: $space-6;
+}
+
+.header {
+  @include card;
+}
+
+.heading {
+  font-size: $font-size-xl;
+  color: $color-brown;
+  margin-bottom: $space-2;
+}
+
+.summary {
+  color: $color-brown-light;
+  margin-bottom: $space-4;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-4;
+  font-size: $font-size-sm;
+  color: $color-brown;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-3;
+  padding: 0 $space-2;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: $space-2;
+  font-size: $font-size-sm;
+  color: $color-brown;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.step {
+  display: flex;
+  gap: $space-3;
+  min-height: 80px;
+}
+
+.timeColumn {
+  width: 80px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: $space-3;
+
+  @include responsive($breakpoint-sm) {
+    width: 100px;
+  }
+}
+
+.time {
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $color-brown;
+  white-space: nowrap;
+}
+
+.endTime {
+  font-size: $font-size-xs;
+  color: $color-brown-light;
+  white-space: nowrap;
+}
+
+.connector {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20px;
+  flex-shrink: 0;
+  padding-top: $space-4;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.line {
+  width: 2px;
+  flex: 1;
+  background: $color-cream-dark;
+  margin-top: $space-1;
+}
+
+.card {
+  flex: 1;
+  background: $color-white;
+  border-radius: $border-radius;
+  padding: $space-3 $space-4;
+  box-shadow: $shadow-sm;
+  margin-bottom: $space-3;
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $space-2;
+  margin-bottom: $space-2;
+  flex-wrap: wrap;
+}
+
+.recipeBadge {
+  font-size: $font-size-xs;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+
+.assignee {
+  font-size: $font-size-xs;
+  font-weight: 600;
+  color: $color-brown-light;
+  white-space: nowrap;
+}
+
+.action {
+  font-size: $font-size-sm;
+  color: $color-brown-dark;
+  line-height: 1.5;
+}
+
+.notes {
+  font-size: $font-size-xs;
+  color: $color-brown-light;
+  font-style: italic;
+  margin-top: $space-1;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: $space-4 0 $space-8;
+}
+
+.startOverButton {
+  @include button-secondary;
+}

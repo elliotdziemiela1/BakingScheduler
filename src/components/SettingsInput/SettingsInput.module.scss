@@ -1,0 +1,68 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  @include card;
+}
+
+.heading {
+  font-size: $font-size-xl;
+  color: $color-brown;
+  margin-bottom: $space-2;
+}
+
+.description {
+  color: $color-brown-light;
+  margin-bottom: $space-6;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: $space-5;
+  margin-bottom: $space-6;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: $space-2;
+}
+
+.label {
+  font-weight: 600;
+  color: $color-brown;
+  font-size: $font-size-sm;
+}
+
+.input {
+  @include input-base;
+  max-width: 300px;
+}
+
+.hint {
+  font-size: $font-size-sm;
+  color: $color-brown-light;
+}
+
+.summary {
+  background: $color-cream;
+  padding: $space-3 $space-4;
+  border-radius: $border-radius;
+  font-size: $font-size-sm;
+  color: $color-brown;
+  margin-bottom: $space-6;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.backButton {
+  @include button-secondary;
+}
+
+.generateButton {
+  @include button-primary;
+}

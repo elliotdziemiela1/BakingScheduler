@@ -1,0 +1,32 @@
+@use '../../styles/variables' as *;
+
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $space-4;
+}
+
+.header {
+  text-align: center;
+  padding: $space-8 0 $space-6;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  color: $color-brown;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: $font-size-lg;
+  color: $color-brown-light;
+  margin-top: $space-2;
+}
+
+.main {
+  width: 100%;
+  max-width: $max-width;
+  flex: 1;
+}

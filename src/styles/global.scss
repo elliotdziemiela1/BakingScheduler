@@ -1,0 +1,15 @@
+@use 'reset';
+@use 'variables' as *;
+
+body {
+  font-family: $font-family;
+  background: $color-cream;
+  color: $color-brown-dark;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}

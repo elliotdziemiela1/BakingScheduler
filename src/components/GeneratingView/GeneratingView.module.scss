@@ -1,0 +1,95 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.container {
+  @include card;
+  text-align: center;
+  padding: $space-12 $space-6;
+}
+
+.spinner {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto $space-6;
+  position: relative;
+}
+
+.spinnerInner {
+  width: 100%;
+  height: 100%;
+  border: 4px solid $color-cream-dark;
+  border-top-color: $color-amber;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.heading {
+  font-size: $font-size-xl;
+  color: $color-brown;
+  margin-bottom: $space-2;
+}
+
+.status {
+  color: $color-amber-dark;
+  font-weight: 600;
+  margin-bottom: $space-2;
+}
+
+.hint {
+  color: $color-brown-light;
+  font-size: $font-size-sm;
+}
+
+.errorIcon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto $space-6;
+  background: $color-error-light;
+  color: $color-error;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xl;
+  font-weight: 700;
+}
+
+.errorMessage {
+  color: $color-error;
+  margin-bottom: $space-4;
+  font-size: $font-size-sm;
+  word-break: break-word;
+}
+
+.failedList {
+  background: $color-cream;
+  padding: $space-4;
+  border-radius: $border-radius;
+  margin-bottom: $space-6;
+  text-align: left;
+  font-size: $font-size-sm;
+
+  ul {
+    list-style: disc;
+    margin: $space-2 0 $space-2 $space-6;
+    color: $color-brown;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  gap: $space-4;
+}
+
+.backButton {
+  @include button-secondary;
+}
+
+.retryButton {
+  @include button-primary;
+}

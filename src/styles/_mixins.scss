@@ -1,0 +1,90 @@
+@use 'variables' as *;
+
+@mixin card {
+  background: $color-white;
+  border-radius: $border-radius-lg;
+  box-shadow: $shadow-md;
+  padding: $space-6;
+}
+
+@mixin button-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: $space-2;
+  padding: $space-3 $space-6;
+  border: none;
+  border-radius: $border-radius;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all $transition-fast;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+@mixin button-primary {
+  @include button-base;
+  background: $color-amber;
+  color: $color-brown-dark;
+
+  &:hover:not(:disabled) {
+    background: $color-amber-dark;
+  }
+}
+
+@mixin button-secondary {
+  @include button-base;
+  background: transparent;
+  color: $color-brown;
+  border: 2px solid $color-amber-light;
+
+  &:hover:not(:disabled) {
+    background: $color-cream;
+    border-color: $color-amber;
+  }
+}
+
+@mixin button-danger {
+  @include button-base;
+  background: transparent;
+  color: $color-error;
+  border: 2px solid $color-error;
+  padding: $space-2 $space-4;
+  font-size: $font-size-sm;
+
+  &:hover:not(:disabled) {
+    background: $color-error-light;
+  }
+}
+
+@mixin input-base {
+  width: 100%;
+  padding: $space-3 $space-4;
+  border: 2px solid $color-cream-dark;
+  border-radius: $border-radius;
+  font-family: $font-family;
+  font-size: $font-size-base;
+  color: $color-brown-dark;
+  background: $color-white;
+  transition: border-color $transition-fast;
+
+  &:focus {
+    outline: none;
+    border-color: $color-amber;
+  }
+
+  &::placeholder {
+    color: $color-brown-light;
+  }
+}
+
+@mixin responsive($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
