@@ -31,7 +31,7 @@ export default function ScheduleView() {
         <div className={styles.meta}>
           <span>Start at <strong>{schedule.startTime}</strong></span>
           <span>Total time: <strong>{schedule.totalPrepTime}</strong></span>
-          <span>Cooks: <strong>{assignees.length}</strong></span>
+          <span>Cooks: <strong>{state.settings.helperCount}</strong></span>
         </div>
       </div>
 
