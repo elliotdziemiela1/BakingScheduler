@@ -17,7 +17,7 @@ export default function ScheduleView() {
   const colorMap = new Map(recipeNames.map((name, i) => [name, RECIPE_COLORS[i % RECIPE_COLORS.length]]));
 
   // Group steps by assignee for the legend
-  const assignees = [...new Set(schedule.steps.map((s) => s.assignee))];
+  // const assignees = [...new Set(schedule.steps.map((s) => s.assignee))];
 
   function handleStartOver() {
     dispatch({ type: 'RESET' });
