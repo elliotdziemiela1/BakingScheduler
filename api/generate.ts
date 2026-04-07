@@ -157,8 +157,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const allFailed = fetchedRecipes.every((r) => r.error);
     if (allFailed) {
+      const errors = fetchedRecipes.map((r) => `${r.url}: ${r.error}`).join('; ');
       return res.status(400).json({
-        error: 'Could not fetch any of the provided recipe URLs. Please paste the recipe text manually.',
+        error: `Could not fetch any recipe URLs. Errors: ${errors}`,
       });
     }
 
