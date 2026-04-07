@@ -122,11 +122,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       .map((b) => (b.type === 'text' ? b.text : ''))
       .join('');
 
-    // Parse JSON from response (handle markdown code fences)
+    // Extract JSON from the response — handle code fences, or JSON embedded in text
     let jsonStr = text.trim();
+
+    // Try markdown code fence first
     const fenceMatch = jsonStr.match(/```(?:json)?\s*\n?([\s\S]*?)\n?\s*```/);
     if (fenceMatch) {
       jsonStr = fenceMatch[1].trim();
+    } else {
+      // Find the first { and last } to extract JSON from surrounding text
+      const firstBrace = jsonStr.indexOf('{');
+      const lastBrace = jsonStr.lastIndexOf('}');
+      if (firstBrace !== -1 && lastBrace > firstBrace) {
+        jsonStr = jsonStr.slice(firstBrace, lastBrace + 1);
+      }
     }
 
     const schedule = JSON.parse(jsonStr);
